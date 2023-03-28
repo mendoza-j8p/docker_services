@@ -169,3 +169,10 @@ http://localhost:3000/facker_data
 
 
 Por defecto se ejecutará nuestro servicio en el puerto 5000.  es decir si dejamos  nuestra linea asi: “app.run()” con los paréntesis vacíos. Podríamos  acceder a él servicio en la dirección:http://localhost:5000/facker_data
+
+
+
+# Parte 2:
+
+- creamos rama develop
+- intalamos reque desde requirements.txt
