@@ -93,8 +93,9 @@ Para generar datos aleatorios, importaremos la clase Faker del módulo faker. Pa
 Con esto, tendremos las herramientas necesarias para desarrollar nuestro servicio de facker.
 
 * Lo siguiente será definir una instancia de Flask:
-
-    'app = Flask(__name__)'
+'''
+    app = Flask(__name__)
+'''
 
 * Luego, crearemos una ruta para nuestro servicio de facker con el decorador “@app.route('/facker').”
 * Dentro de esta función, crearemos una instancia de Faker:, añadiendo esta linea abajo:
