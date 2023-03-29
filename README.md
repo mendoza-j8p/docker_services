@@ -23,21 +23,23 @@ Una vez creado el Dockerfile correspondiente para cada servicio, el siguiente ni
 
 ## Objetivo
 
-El objetivo es crear cuatro servicios:
-
-Uno llamado "web", será construido con Python y Flash y su front-end estará hecho con Bootstrap, HTML y CSS.
-Esta aplicación será un generador de datos falsos con ciertas características y al final se graficarán en una tabla de Bootstrap utilizando Data Table.
-El servicio permitirá realizar consultas de datos desde el navegador y otro llamado "api" que será el intermediario entre el servicio web y api.
-
-Otro servicio llamado "facker", encargado de generar los datos falsos que se mostrarán en el servicio web y por último el servicio “database” para la base de datos.
-
-### ¿Como queda?
-
 Cuando un usuario accede al servicio web, los datos que se graficarán serán consultados al servicio "api" y este a su vez consultará al servicio "facker", que se encargará de generar los datos falsos y de insertarlos en la base de datos.
 
 Los resultados de las consultas se mostrarán en bloques de cinco registros y se incluirán botones para continuar y para acceder al panel de administración de la base de datos.
 
- Estos serían los pasos:
+    Crearemos 4 servicios funcionales:
+  
+* Uno llamado "web", será construido con Python y Flash y su front-end estará hecho con Bootstrap, HTML y CSS.
+Esta aplicación será un generador de datos falsos con ciertas características y al final se graficarán en una tabla de Bootstrap utilizando Data Table.
+El servicio permitirá realizar consultas de datos desde el navegador.
+
+* Otro servicio llamado "api" que será el intermediario entre el servicio web y api.
+
+* Otro llamado "facker", encargado de generar los datos falsos que se mostrarán en el servicio web.
+
+* Y por último el servicio “database” para la base de datos.
+
+ Estos serían los pasos a grandes rasgos:
 
 * Crear un servicio web.
 * Crear un servicio API.
@@ -77,7 +79,7 @@ De esta manera, podríamos tener una organización más clara y separada para ca
 
 Una vez que hemos instalado ambas librerías, podemos comenzar a importarlas en nuestro código para empezar a trabajar con ellas
 
-## Archico faker-service.py
+## Archivo faker-service.py
 
 Abrimos el archivo: faker-service.py.
 
@@ -85,14 +87,14 @@ Abrimos el archivo: faker-service.py.
 Para utilizar Flask, importaremos la clase Flask del módulo flask.
 Para generar datos aleatorios, importaremos la clase Faker del módulo faker. Para ello, podemos usar las siguientes líneas de código:
 
-    from flask import Flask
-    from faker import Faker
+    'from flask import Flask
+    from faker import Faker'
 
 Con esto, tendremos las herramientas necesarias para desarrollar nuestro servicio de facker.
 
 * Lo siguiente será definir una instancia de Flask:
 
-    app = Flask(__name__)
+    'app = Flask(__name__)'
 
 * Luego, crearemos una ruta para nuestro servicio de facker con el decorador “@app.route('/facker').”
 * Dentro de esta función, crearemos una instancia de Faker:, añadiendo esta linea abajo:
